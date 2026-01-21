@@ -1,0 +1,12 @@
+{
+  "name": "blazefast",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn --cwd webapp dev",
+    "build": "yarn --cwd webapp build",
+    "build:functions": "yarn --cwd functions build",
+    "deploy": "yarn build && firebase deploy",
+    "emulators": "firebase emulators:start"
+  }
+}

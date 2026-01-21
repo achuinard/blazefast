@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "88781679477",
+    "firebase_url": "https://blazefast-template-default-rtdb.firebaseio.com",
+    "project_id": "blazefast-template",
+    "storage_bucket": "blazefast-template.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88781679477:android:75b073a17b54b37965813c",
+        "android_client_info": {
+          "package_name": "com.blazefast.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88781679477-78fal156itmaqjtuvgqmbvn5evsrrr99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0nxplf4--tCll5Ws3ORYcrvBDuT1UCcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88781679477-78fal156itmaqjtuvgqmbvn5evsrrr99.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "88781679477-mo3esjc9cb3hrm4sk3da6vdne2liqdqh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.blazefast.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
