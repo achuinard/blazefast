@@ -1,10 +1,10 @@
 import {BFText} from "@/components/BFText";
-import {useNavigation} from "@react-navigation/native";
+import {useRouter} from "expo-router";
 import {Image, View, StyleSheet, useColorScheme} from "react-native";
 import BFButton from "@/components/BFButton";
 
 const GetStartedPage = () => {
-    const nav = useNavigation();
+    const router = useRouter();
     const colorScheme = useColorScheme();
     const isDark = colorScheme === 'dark';
 
@@ -12,7 +12,7 @@ const GetStartedPage = () => {
         <View style={[styles.container, {backgroundColor: isDark ? '#1e293b' : '#f1f5f9'}]}>
             <View style={styles.content}>
                 <Image
-                    source={require('../assets/images/icon.png')}
+                    source={require('../../assets/images/icon.png')}
                     style={styles.icon}
                 />
                 <View style={styles.textContainer}>
@@ -20,13 +20,13 @@ const GetStartedPage = () => {
                         BlazeFast React Native Starter
                     </BFText>
                     <BFText style={styles.subtitle}>
-                        Edit this in <BFText style={styles.bold}>screens/GetStarted.tsx</BFText>
+                        Edit this in <BFText style={styles.bold}>app/(auth)/get-started.tsx</BFText>
                     </BFText>
                 </View>
 
                 <View style={styles.buttonContainer}>
-                    <BFButton color={'primary'} title={'Sign Up'} onPress={() => nav.navigate('Register' as never)}/>
-                    <BFButton title={'Login'} color={'pink'} onPress={() => nav.navigate('Login' as never)}/>
+                    <BFButton color={'primary'} title={'Sign Up'} onPress={() => router.push('/register')}/>
+                    <BFButton title={'Login'} color={'pink'} onPress={() => router.push('/login')}/>
                 </View>
             </View>
         </View>

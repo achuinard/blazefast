@@ -74,9 +74,9 @@ Pre-configured rules for:
 - TypeScript
 
 **Generated App:**
-- Expo SDK 54
-- React Native 0.81
-- React Navigation
+- Expo SDK 56
+- React Native 0.85
+- Expo Router (file-based navigation)
 - React Native Firebase
 - TypeScript
 

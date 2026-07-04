@@ -147,19 +147,30 @@ firebase deploy --only firestore:rules,storage,database
 
 ### Authentication
 - \`app/utils/auth-methods.ts\` - Enabled authentication providers
-- \`app/screens/Login.tsx\` - Login screen
-- \`app/screens/Register.tsx\` - Registration screen
+- \`app/app/(auth)/login.tsx\` - Login screen
+- \`app/app/(auth)/register.tsx\` - Registration screen
 
 ### Firebase Rules
 - \`security-rules/firestore.rules\` - Firestore security rules
 - \`security-rules/storage.rules\` - Cloud Storage security rules
 - \`security-rules/database.rules.json\` - Realtime Database rules
 
+## Navigation
+
+This app uses [Expo Router](https://docs.expo.dev/router/introduction/) for file-based routing. Routes live in \`app/app/\`:
+
+- \`app/app/_layout.tsx\` - Root layout. Listens to Firebase auth state and switches between the two stacks below using \`Stack.Protected\`.
+- \`app/app/(auth)/\` - Signed-out stack: Get Started (\`get-started.tsx\`), \`login.tsx\`, \`register.tsx\`.
+- \`app/app/(app)/\` - Signed-in stack: the bottom tabs (\`(tabs)/\`) plus the Firebase example screens (\`firestore.tsx\`, \`realtime-database.tsx\`, \`analytics.tsx\`, \`storage.tsx\`, \`cloud-functions.tsx\`).
+- \`app/app/(app)/(tabs)/\` - Bottom tab bar: Dashboard (\`index.tsx\`), \`firebase.tsx\`, \`account.tsx\`.
+
+Navigate with \`useRouter().push('/route')\` or the \`<Link>\` component from \`expo-router\`. Signing in/out flips the auth guard, which automatically swaps between the signed-out and signed-in stacks.
+
 ## Common Tasks
 
 ### Add a new screen
-1. Create screen component in \`app/screens/\`
-2. Add route in \`app/app/App.tsx\`
+1. Create a route file under the appropriate group in \`app/app/\` (the filename becomes the route path).
+2. Optionally add a \`<Stack.Screen>\` entry in that group's \`_layout.tsx\` to set the title or header options.
 
 ### Add a Cloud Function
 1. Add function in \`cloud-funcs/functions/index.js\`

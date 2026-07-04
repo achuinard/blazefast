@@ -1,5 +1,4 @@
-import type {Theme} from "@react-navigation/native/src/types";
-import {DefaultTheme} from "@react-navigation/native";
+import {DefaultTheme, type Theme} from "expo-router/react-navigation";
 
 const BFDefaultTheme: Theme = {
     dark: false,

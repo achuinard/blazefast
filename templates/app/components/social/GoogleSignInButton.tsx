@@ -16,9 +16,13 @@ const GoogleSignInButton = ({title, ...rest}: {
                         await GoogleSignin.hasPlayServices({
                             showPlayServicesUpdateDialog: true,
                         });
-                        const {idToken} = await GoogleSignin.signIn();
+                        const response = await GoogleSignin.signIn();
+                        if (response.type !== 'success') {
+                            // User cancelled the sign-in flow.
+                            return;
+                        }
                         const googleCredential =
-                            auth.GoogleAuthProvider.credential(idToken);
+                            auth.GoogleAuthProvider.credential(response.data.idToken);
 
                         await auth().signInWithCredential(googleCredential);
 
